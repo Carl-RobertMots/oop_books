@@ -7,9 +7,9 @@ form.addEventListener("submit", addBook)
 
 // addTask(book) function
 function addBook(event) {
-    const title = document.querySelector('#title').value
-    const author = document.querySelector("#author").value
-    const isbn = document.querySelector("#isbn").value
+    const title = ui.title.value
+    const author = ui.author.value
+    const isbn = ui.isbn.value
     //create book object with user data
     const book = new Book(title, author, isbn)
     console.log(book)
@@ -17,9 +17,9 @@ function addBook(event) {
     ui.addBook(book)
 
     //clear form input value
-    document.querySelector("#title").value = ""
-    document.querySelector("#author").value = ""
-    document.querySelector("#isbn").value = ""
+    ui.title.value =""
+    ui.author.value =""
+    ui.isbn.value =""
     event.preventDefault()
 }
 
