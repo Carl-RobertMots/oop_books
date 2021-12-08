@@ -1,8 +1,9 @@
 //app object
 const ui = new UI()
+const ls = new LS()
 
 // user input form
-const form = document.querySelector("form")
+const form = document.querySelector("#book-form")
 form.addEventListener("submit", addBook)
 
 // addTask(book) function
@@ -15,7 +16,8 @@ function addBook(event) {
     console.log(book)
     // add book data to ui and show it
     ui.addBook(book)
-
+    // save book data to local storage
+    ls.addBook(book)
     //clear form input value
     ui.title.value =""
     ui.author.value =""
