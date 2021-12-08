@@ -6,6 +6,16 @@ const ls = new LS()
 const form = document.querySelector("#book-form")
 form.addEventListener("submit", addBook)
 
+// Page reload
+document.addEventListener("DOMContentLoaded", getBooks)
+
+function getBooks(){
+    const books = ls.getData("books")
+    books.forEach(function (booksFromLS){
+        ui.addBook(booksFromLS)
+    })
+}
+
 // addTask(book) function
 function addBook(event) {
     const title = ui.title.value

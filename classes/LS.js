@@ -1,5 +1,5 @@
 class LS {
-    addBook(key) {
+    getData(key) {
         let data
         if (localStorage.getItem('key') === null) {
             data = []
