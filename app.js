@@ -35,3 +35,19 @@ function addBook(event) {
     event.preventDefault()
 }
 
+// books table click event
+const deleteBtn = document.querySelector("#book-list")
+deleteBtn.addEventListener("click", delBook)
+
+function delBook(event) {
+    if(event.target.textContent === "X") {
+            const book = ui.getBook(event.target)
+            if(ui.delBook(event.target) === true){
+                ls.delBook(book)
+            }
+
+            //removeBook(book)
+
+        }
+
+}
